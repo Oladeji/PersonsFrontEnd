@@ -3,4 +3,7 @@
     useGetPersons: {
     mainKey: "useGetPersonsKey",
   },
+      useGetPersonTypes: {
+    mainKey: "useGetPersonsTypesKey",
+  },
 }

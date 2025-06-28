@@ -1,2 +1,2 @@
 
-export const Personendpoints = `https://localhost:7017/api/persons`;
+export const PersonEndpoints = `https://localhost:7017/api/persons`;

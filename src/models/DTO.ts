@@ -1,13 +1,13 @@
 export interface CreatePersonRequest {
-    name?: string | undefined;
-    age?: number;
+    name: string ;
+    age: number;
     personTypeId?: number;
 }
 
 export interface PersonResponse {
     personId?: number;
-    name?: string | undefined;
-    age?: number;
+    name: string ;
+    age: number;
     personTypeId?: number;
     personType?: PersonTypeResponse;
 }
@@ -28,7 +28,7 @@ export interface ProblemDetails {
 }
 
 export interface UpdatePersonRequest {
-    name?: string | undefined;
-    age?: number;
-    personTypeId?: number;
+    name: string ;
+    age: number;
+    personTypeId: number;
 }
