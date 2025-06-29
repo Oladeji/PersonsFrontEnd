@@ -1,69 +1,79 @@
-# React + TypeScript + Vite
+# Univerus Persons of Interest Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A responsive React single-page application for managing persons of interest, built with TypeScript, Material UI, Material React Table, and TanStack Query.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- View all persons from the API in a sortable, filterable table
+- Create, edit, and delete persons using beautiful modal dialogs
+- Responsive design for desktop and mobile
+- Uses Axios for API requests and TanStack Query for data management
 
-## Expanding the ESLint configuration
+## Getting Started
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### Prerequisites
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- [Node.js](https://nodejs.org/) (v16 or later recommended)
+- [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/)
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+### Installation
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+1. **Clone the repository:**
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+   ```bash
+   git clone https://github.com/your-username/PersonsFrontEnd.git
+   cd PersonsFrontEnd
+   ```
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+2. **Install dependencies:**
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+   Using npm:
+   ```bash
+   npm install
+   ```
+
+   Or using yarn:
+   ```bash
+   yarn install
+   ```
+
+3. **Configure the API endpoint:**
+
+   - By default, the app expects the backend API at `/api/persons`.
+   - If your API is at a different URL, update the Axios base URL or endpoints in the relevant files in `src/hooks` or `src/API`.
+
+4. **Start the development server:**
+
+   Using npm:
+   ```bash
+   npm run dev
+   ```
+
+   Or using yarn:
+   ```bash
+   yarn dev
+   ```
+
+   > **Note:** The development server runs on port **5173** by default.  
+   > If you change the port, you must add the new port to your backend API's CORS exception list, or API requests will be blocked by the browser.
+
+5. **Open the app:**
+
+   Visit [http://localhost:5173](http://localhost:5173) (or the port shown in your terminal) in your browser.
+
+## Project Structure
+
+- `src/components/` – React components (Person table, dialogs, etc.)
+- `src/hooks/` – Custom React hooks for API and query logic
+- `src/models/` – TypeScript DTOs and types
+- `src/constants/` – App constants and query keys
+- `src/API/` – API utility functions
+
+## Customization
+
+- Update the API endpoints in the hooks or API files if your backend differs.
+- Adjust table columns in `src/components/PersonColumnhelper.tsx` as needed.
+
+## License
+
+MIT
